@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Koruser</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__bar">
+      <a class="brand" href="index.html">
+        <img src="logo.avif" alt="Koruser" />
+      </a>
+
+      <button class="nav__btn" id="navBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="floor-protection.html">Floor Protection</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="icon-btn" href="search.html" aria-label="Search">🔎</a>
+        <a class="icon-btn" href="cart.html" aria-label="Cart">🛒</a>
+      </div>
+    </div>
+  </header>
+
+<main class="container">
+  <section class="subscribe">
+    <h3>Contact Us</h3>
+    <p>Email: info@covermate.store</p>
+    <p>Phone: +1 (772) 210-5138</p>
+    <p>Address: 10 SE Central Pkwy, Suite 430, Stuart, FL 34994</p>
+    <form onsubmit="event.preventDefault(); alert('Message sent!');">
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="text" placeholder="Subject" required />
+      <input type="text" placeholder="Message" required />
+      <button class="btn" type="submit">Send</button>
+    </form>
+  </section>
+</main>
+
+  <footer>
+    <div class="container footer__grid">
+      <div class="about">
+        <h4>About</h4>
+        <p>Koruser provides premium temporary floor protection trusted by contractors and DIYers.</p>
+      </div>
+      <div class="contact">
+        <h4>Contact</h4>
+        <p>dsinttr@gmail.com</p>
+        <p>+44 7391 876402</p>
+        <p>London, UK</p>
+      </div>
+      <div class="payments">
+        <h4>Payments</h4>
+        <p>Visa • MasterCard • Apple Pay • Google Pay</p>
+      </div>
+      <div class="legal">© 2025, Koruser</div>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

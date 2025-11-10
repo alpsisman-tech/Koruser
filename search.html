@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Search — Koruser</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+ 
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__bar">
+      <a class="brand" href="index.html">
+        <img src="logo.avif" alt="Koruser" />
+      </a>
+
+      <button class="nav__btn" id="navBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="floor-protection.html">Floor Protection</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="icon-btn" href="search.html" aria-label="Search">🔎</a>
+        <a class="icon-btn" href="cart.html" aria-label="Cart">🛒</a>
+      </div>
+    </div>
+  </header>
+
+<main class="container">
+  <section class="subscribe">
+    <h3>Search</h3>
+    <form onsubmit="event.preventDefault()">
+      <input id="q" type="search" placeholder="Search products..." />
+      <button class="btn" type="button" onclick="doSearch()">Search</button>
+    </form>
+    <div id="results" style="margin-top:12px"></div>
+  </section>
+</main>
+
+  <footer>
+    <div class="container footer__grid">
+      <div class="about">
+        <h4>About</h4>
+        <p>Koruser provides premium temporary floor protection trusted by contractors and DIYers.</p>
+      </div>
+      <div class="contact">
+        <h4>Contact</h4>
+        <p>dsinttr@gmail.com</p>
+        <p>+44 7391 876402</p>
+        <p>London, UK</p>
+      </div>
+      <div class="payments">
+        <h4>Payments</h4>
+        <p>Visa • MasterCard • Apple Pay • Google Pay</p>
+      </div>
+      <div class="legal">© 2025, Koruser</div>
+    </div>
+  </footer>
+
+<script>
+const items = [
+  { title: 'Temporary Floor Protection 36’’ × 100’', url: 'floor-protection.html', tags: ['floor','roll','anti-slip','reusable'] },
+  { title: 'Garage Floor Protection', url: '#', tags: ['garage','absorbent'] },
+  { title: 'Urinal Carpet', url: '#', tags: ['carpet','odor'] }
+];
+function doSearch(){
+  const q = document.getElementById('q').value.toLowerCase().trim();
+  const rows = items.filter(i => i.title.toLowerCase().includes(q) || i.tags.some(t => t.includes(q)));
+  const el = document.getElementById('results');
+  if(!q){ el.innerHTML = '<p class="muted">Type something to search.</p>'; return; }
+  if(rows.length===0){ el.innerHTML = '<p>No results.</p>'; return; }
+  el.innerHTML = rows.map(i => `<p><a class="btn-link" href="${i.url}">${i.title}</a></p>`).join('');
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>
