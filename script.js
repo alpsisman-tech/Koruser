@@ -76,7 +76,7 @@ if (yt) {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  const TO = 'dsinttr@gmail.com'; // your receiving Gmail address
+  const TO = 'uk@koruser.com'; // your receiving Gmail address
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
