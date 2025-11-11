@@ -76,7 +76,7 @@ if (yt) {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  const TO = 'youraddress@gmail.com'; // <-- change to your recipient Gmail
+  const TO = 'dsinttr@gmail.com'; // your receiving Gmail address
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -88,17 +88,13 @@ if (yt) {
 
     const body = `From: ${name} <${email}>\n\n${msg}`;
 
-    // Prefer Gmail web compose (works great on desktop; opens new tab)
     const gmailURL =
       `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(TO)}&su=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
 
-    // Fallback mailto (for devices/browsers without Gmail web)
     const mailtoURL =
       `mailto:${encodeURIComponent(TO)}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
 
-    // Try Gmail compose; if it fails, the user can still use mailto via the current tab
     const opened = window.open(gmailURL, '_blank', 'noopener,noreferrer');
     if (!opened) window.location.href = mailtoURL;
   });
 })();
-
