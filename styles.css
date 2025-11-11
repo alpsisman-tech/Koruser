@@ -221,3 +221,73 @@ footer .legal{ grid-column:1/-1; border-top:1px solid var(--border); padding-top
   outline:2px solid color-mix(in oklab, var(--brand) 70%, white);
   outline-offset:3px; border-radius:10px;
 }
+/* ============================
+   Mobile fixes (append at end)
+   ============================ */
+
+/* Better text scaling/wrapping on small devices */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: anywhere; word-break: normal; }
+
+/* Prevent grid children from overflowing their columns */
+.features > *,.products > *,.hero__grid > *,.footer__grid > * { min-width: 0; }
+
+/* Improve hero readability & size on phones */
+@media (max-width: 640px){
+  .container{ padding: var(--s-3) 0; }
+  .slides{ height: min(54vh, 420px); }               /* shorter slider */
+  .slide__copy{
+    padding: 16px;
+    background: linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.45) 55%); /* stronger contrast */
+  }
+  .slide__copy h1{ font-size: clamp(22px, 6vw, 28px); line-height: 1.15; }
+  .slide__copy p{ font-size: 14px; }
+  .cta{ flex-wrap: wrap; gap: 8px; }                 /* buttons wrap instead of spilling */
+  .btn{ padding: 10px 14px; }
+}
+
+/* Nav: make tap targets safe & columns stack */
+@media (max-width: 900px){
+  .nav a{ padding: 12px 14px; }                      /* larger tap target */
+}
+@media (max-width: 480px){
+  .nav ul{ grid-template-columns: 1fr !important; }  /* single column menu */
+}
+
+/* Feature tiles: stack cleanly and shrink thumbnails */
+@media (max-width: 860px){
+  .features .feature{ grid-template-columns: 84px 1fr; align-items: center; }
+  .features img{ width: 84px; height: 84px; }
+}
+
+/* Products: avoid title overflow & keep cards neat */
+.product h3{ hyphens: auto; overflow-wrap: anywhere; }
+.product__body{ gap: 6px; }
+@media (max-width: 640px){
+  .products{ gap: 14px; }                             /* a bit tighter on phones */
+}
+
+/* Forms & subscribe: no horizontal scroll, single column on phones */
+.subscribe form{ max-width: 100%; }
+@media (max-width: 640px){
+  .subscribe form{ grid-template-columns: 1fr; gap: 8px; }
+  .subscribe input{ width: 100%; }
+}
+
+/* YouTube card: ensure no overflow on tiny screens */
+.yt__wrap{ border-radius: 12px; }
+@media (max-width: 640px){
+  .yt{ gap: 8px; }
+}
+
+/* Footer: avoid cramped columns on small screens */
+@media (max-width: 900px){
+  .footer__grid{ gap: 14px; }
+}
+
+/* Buttons & icons: consistent hit area */
+.icon-btn{ min-width: 38px; min-height: 38px; }
+
+/* Ensure images never exceed viewport width (safety net) */
+img{ max-width: 100%; height: auto; }
+
