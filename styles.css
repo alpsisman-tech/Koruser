@@ -290,39 +290,70 @@ body { overflow-wrap: anywhere; word-break: normal; }
 
 /* Ensure images never exceed viewport width (safety net) */
 img{ max-width: 100%; height: auto; }
-/* =============================
-   PATCH: mobile spacing & footer
-   ============================= */
+/* ================================
+   Mobile polish: Subscribe + Footer
+   (append-only; safe on top of current styles)
+   ================================ */
 
-/* 1) Ensure sections don't visually overlap and get breathing room */
-.hero, .features, .yt, .products, .subscribe { position: relative; z-index: 0; }
-.subscribe { margin-block: var(--s-4); }      /* add bottom gap so it doesn't crowd the footer */
-.products { margin-bottom: var(--s-4); }      /* extra space after product cards */
+/* General safety nets */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: anywhere; }
 
-/* 2) Safer wrapping so text doesn't break in odd places */
-footer p, footer li, footer a, footer h4 {
-  overflow-wrap: normal; word-break: normal; hyphens: auto;
+/* Ensure preceding section doesn't collide with Subscribe */
+.products { margin-bottom: 18px; }
+
+/* Subscribe card: spacing, stacking, readability */
+@media (max-width: 640px){
+  .subscribe{
+    position: relative; z-index: 1;          /* sit above shadows behind it */
+    margin-top: 16px;                         /* space from section above */
+    margin-bottom: 24px;                      /* space from footer */
+    padding: 16px;                            /* tighter padding on phones */
+    gap: 10px; border-radius: 14px;
+    box-shadow: var(--shadow-1);
+  }
+  .subscribe h3{
+    font-size: 18px;
+    margin: 0 0 6px;
+    line-height: 1.25;
+  }
+  .subscribe form{
+    grid-template-columns: 1fr;               /* input over button */
+    gap: 8px;
+    max-width: 100%;
+  }
+  .subscribe input{
+    width: 100%;
+    min-height: 44px;                         /* comfy tap target */
+  }
+  .subscribe .btn{
+    width: 100%;
+    min-height: 44px;
+    font-size: 15px;
+  }
 }
 
-/* 3) Mobile-specific tweaks */
+/* Footer: smaller fonts + single column on mobile */
 @media (max-width: 640px){
-
-  /* Subscribe: tighter, no spill, comfy on phones */
-  .subscribe { margin-block: var(--s-3); }
-  .subscribe form { grid-template-columns: 1fr; gap: 10px; }
-  .subscribe input { width: 100%; }
-
-  /* Footer: smaller type + nicer spacing only on mobile */
-  footer h4 { font-size: 14px; line-height: 1.3; }
+  footer{ font-size: 13px; }
+  .footer__grid{
+    grid-template-columns: 1fr;               /* one column */
+    gap: 12px;
+  }
+  footer .about,
+  footer .contact,
+  footer .payments{ grid-column: 1 / -1; }
+  footer h4{ font-size: 15px; margin-bottom: 6px; }
   footer p,
   footer li,
-  footer a,
-  footer .legal { font-size: 12.5px; line-height: 1.5; }
-
-  /* Prevent the “Payments” word splitting */
-  .payments h4, .payments p { white-space: normal; }
+  footer a{ font-size: 13px; line-height: 1.4; }
+  /* Let long emails/phones break cleanly instead of ragged wraps */
+  footer .contact a,
+  footer .contact p{ overflow-wrap: anywhere; word-break: break-word; }
 }
 
-/* 4) Safety net for any lingering layout nudges */
-.features > *, .products > *, .footer__grid > * { min-width: 0; }  /* stop columns from pushing wider than viewport */
-
+/* Extra safety: grid children never force horizontal scroll */
+.features > *,
+.products > *,
+.hero__grid > *,
+.footer__grid > * { min-width: 0; }
