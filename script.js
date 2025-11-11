@@ -71,3 +71,34 @@ if (yt) {
     window.open('https://www.youtube.com/watch?v=hv90QD-e_zw', '_blank', 'noopener,noreferrer');
   });
 }
+// ---- Contact form -> Gmail compose (no backend) ----
+(() => {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const TO = 'youraddress@gmail.com'; // <-- change to your recipient Gmail
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('c-name')?.value?.trim() || '';
+    const email = document.getElementById('c-email')?.value?.trim() || '';
+    const subj = document.getElementById('c-subj')?.value?.trim() || 'Website contact';
+    const msg  = document.getElementById('c-msg')?.value?.trim()  || '';
+
+    const body = `From: ${name} <${email}>\n\n${msg}`;
+
+    // Prefer Gmail web compose (works great on desktop; opens new tab)
+    const gmailURL =
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(TO)}&su=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+
+    // Fallback mailto (for devices/browsers without Gmail web)
+    const mailtoURL =
+      `mailto:${encodeURIComponent(TO)}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+
+    // Try Gmail compose; if it fails, the user can still use mailto via the current tab
+    const opened = window.open(gmailURL, '_blank', 'noopener,noreferrer');
+    if (!opened) window.location.href = mailtoURL;
+  });
+})();
+
