@@ -1,86 +1,168 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Search — Koruser</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
 
- 
+<!-- HEADER -->
+<header id="header" class="header">
+  <div class="container header-inner">
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header__bar">
-      <a class="brand" href="index.html">
-        <img src="logo.avif" alt="Koruser" />
-      </a>
+    <a href="index.html" class="brand">
+      <img src="logo.avif" alt="Koruser">
+    </a>
 
-      <button class="nav__btn" id="navBtn" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-      </button>
+    <button id="menuBtn" class="menu-btn">
+      <span></span><span></span><span></span>
+    </button>
 
-      <nav class="nav" id="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="cart.html">Cart</a></li>
-        </ul>
-      </nav>
+    <nav id="nav" class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- FULLSCREEN MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-gradient"></div>
+
+  <div class="container hero-inner animate">
+    <h1 class="hero-title">Search</h1>
+    <p class="hero-subtitle">
+      Look for products, guides, or information across Koruser.
+    </p>
+  </div>
+</section>
+
+
+
+<!-- SEARCH BAR -->
+<section class="search-section">
+  <div class="container animate">
+
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="Search Koruser…" autocomplete="off"/>
     </div>
-  </header>
 
-<main class="container">
-  <section class="subscribe">
-    <h3>Search</h3>
-    <form onsubmit="event.preventDefault()">
-      <input id="q" type="search" placeholder="Search products..." />
-      <button class="btn" type="button" onclick="doSearch()">Search</button>
-    </form>
-    <div id="results" style="margin-top:12px"></div>
-  </section>
-</main>
+    <div id="searchResults" class="search-results"></div>
 
-  <footer>
-    <div class="container footer__grid">
-      <div class="about">
-        <h4>About</h4>
-        <p>Koruser provides premium temporary floor protection trusted by contractors and DIYers.</p>
-      </div>
-      <div class="contact">
-        <h4>Contact</h4>
-        <p>uk@koruser.com</p>
-        <p>+44 7391 876402</p>
-        <p>London, UK</p>
-      </div>
-      <div class="payments">
-        <h4>Payments</h4>
-        <p>Visa • MasterCard • Apple Pay • Google Pay</p>
-      </div>
-      <div class="legal">© 2025, Koruser</div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <h4>Koruser</h4>
+      <p>Premium protection solutions for professionals and modern interiors.</p>
     </div>
-  </footer>
 
-<script>
-const items = [
-  { title: 'Temporary Floor Protection 36’’ × 100’', url: 'floor-protection.html', tags: ['floor','roll','anti-slip','reusable'] },
-  { title: 'Garage Floor Protection', url: '#', tags: ['garage','absorbent'] },
-  { title: 'Urinal Carpet', url: '#', tags: ['carpet','odor'] }
-];
-function doSearch(){
-  const q = document.getElementById('q').value.toLowerCase().trim();
-  const rows = items.filter(i => i.title.toLowerCase().includes(q) || i.tags.some(t => t.includes(q)));
-  const el = document.getElementById('results');
-  if(!q){ el.innerHTML = '<p class="muted">Type something to search.</p>'; return; }
-  if(rows.length===0){ el.innerHTML = '<p>No results.</p>'; return; }
-  el.innerHTML = rows.map(i => `<p><a class="btn-link" href="${i.url}">${i.title}</a></p>`).join('');
-}
-</script>
+     <div>
+      <h4>Contact</h4>
+      <p>uk@koruser.com</p>
+      <p>+44 7391 876402</p>
+      <p>London, UK</p>
+    </div>
+
+    <div>
+      <h4>Links</h4>
+      <a href="products.html">Products</a><br>
+      <a href="about.html">About</a><br>
+      <a href="contact.html">Contact</a><br><br>
+      <a href="https://www.linkedin.com/company/koruseruk/?viewAsMember=true"
+         class="linkedin" target="_blank">LinkedIn</a>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">© 2025 Koruser</p>
+</footer>
+
+
+<!-- SECRET THEME HOTSPOT -->
+<div id="themeHotspot"></div>
+
 <script src="script.js"></script>
+
+<!-- OPTIONAL: SIMPLE SEARCH JS LOGIC -->
+<script>
+  const input = document.getElementById("searchInput");
+  const results = document.getElementById("searchResults");
+
+  const data = [
+    {
+      name: "Temporary Floor Protection Roll",
+      link: "products.html",
+      keywords: "floor protection roll temporary guard surface cover"
+    },
+    {
+      name: "Microfiber Cleaning Cloths – 12 Pack",
+      link: "products.html",
+      keywords: "cloth cleaning absorbent microfiber wipes"
+    },
+    {
+      name: "About Koruser",
+      link: "about.html",
+      keywords: "brand story mission info"
+    },
+    {
+      name: "Contact Koruser",
+      link: "contact.html",
+      keywords: "email help support inquiry"
+    }
+  ];
+
+  input.addEventListener("input", () => {
+    const q = input.value.toLowerCase().trim();
+    results.innerHTML = "";
+
+    if (q.length === 0) return;
+
+    const matches = data.filter(item => 
+      item.name.toLowerCase().includes(q) ||
+      item.keywords.includes(q)
+    );
+
+    if (matches.length === 0) {
+      results.innerHTML = `<p class="no-results">No results found.</p>`;
+      return;
+    }
+
+    matches.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "search-item";
+      div.innerHTML = `<a href="${item.link}">${item.name}</a>`;
+      results.appendChild(div);
+    });
+  });
+</script>
+
 </body>
 </html>
