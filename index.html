@@ -74,14 +74,25 @@
   </div>
 </section>
 
-<!-- IMAGE STRIP -->
-<section class="image-strip">
-  <div class="container strip-grid animate">
-    <img src="paintproof.jpg" alt="">
-    <img src="savemoney.jpg" alt="">
-    <img src="absorbent.jpg" alt="">
+<section class="image-slider-section">
+  <div class="slider-wrapper">
+
+    <button class="slider-btn left" id="sliderLeft">‹</button>
+
+    <div class="image-slider" id="imageSlider">
+      <img src="paintproof.jpg" alt="">
+      <img src="savemoney.jpg" alt="">
+      <img src="easyapplication.jpg" alt="">
+      <img src="absorbent.jpg" alt="">
+      <img src="paintproof.jpg" alt=""> <!-- extra to make it feel full -->
+      <img src="easyapplication.jpg" alt="">
+    </div>
+
+    <button class="slider-btn right" id="sliderRight">›</button>
+
   </div>
 </section>
+
 
 <!-- PRODUCT SHOWCASE (editorial style) -->
 <section class="showcase">
@@ -89,7 +100,12 @@
     <h2 class="section-heading">Our Essentials</h2>
 
     <div class="editorial-product">
-      <img src="easyapplication.jpg" alt="">
+<div class="product-photo" data-product="floor">
+  <img id="photo-floor" src="paintproof.jpg" alt="product">
+
+  <button class="photo-btn left" data-product="floor" data-direction="left">‹</button>
+  <button class="photo-btn right" data-product="floor" data-direction="right">›</button>
+</div>
       <div class="editorial-text">
         <h3>Temporary Floor Protection Roll</h3>
         <p>Reusable, anti-slip, heavy-duty surface protection trusted by contractors.</p>
@@ -99,7 +115,11 @@
     </div>
 
     <div class="editorial-product reverse">
-      <img src="81Qr2PwCPbL._AC_SL1500_.jpg" alt="">
+<div class="product-photo" data-product="cloths">
+  <img id="photo-cloths" src="81cg6At+gjL._AC_SL1500_.jpg" alt="product">
+  <button class="photo-btn left" data-product="cloths" data-direction="left">‹</button>
+  <button class="photo-btn right" data-product="cloths" data-direction="right">›</button>
+</div>
       <div class="editorial-text">
         <h3>Microfiber Cleaning Cloths (12-Pack)</h3>
         <p>Ultra-absorbent, lint-free cleaning cloths for every surface.</p>
