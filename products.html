@@ -1,125 +1,134 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Products — Koruser</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="container header__bar">
+<!-- HEADER -->
+<header id="header" class="header">
+  <div class="container header-inner">
 
-    <a class="brand" href="index.html">
-      <img src="logo.avif" alt="Koruser" />
+    <a href="index.html" class="brand">
+      <img src="logo.avif" alt="Koruser">
     </a>
 
-    <button class="nav__btn" id="navBtn" aria-label="Toggle menu" aria-expanded="false">
-      <span></span>
-    </button>
+    <button id="menuBtn" class="menu-btn"><span></span><span></span><span></span></button>
 
-    <nav class="nav" id="nav">
+    <nav id="nav" class="nav">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About Us</a></li>
+        <li><a class="active" href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="search.html">Search</a></li>
-        <li><a href="cart.html">Cart</a></li>
       </ul>
     </nav>
+
   </div>
 </header>
-<!-- END HEADER -->
 
-<main class="container">
+<!-- FULLSCREEN MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
 
-  <!-- PAGE TITLE -->
-  <section class="subscribe">
-    <h3>Our Products</h3>
-    <p>Explore our high-quality protective materials and cleaning cloths.</p>
-  </section>
+<!-- HERO -->
+<section class="hero hero-products">
+  <div class="hero-gradient"></div>
 
-  <!-- PRODUCT GRID -->
-  <section class="products" style="margin-top:24px;">
+  <div class="container hero-inner animate">
+    <h1 class="hero-title">Our Essentials</h1>
+    <p class="hero-subtitle">
+      A curated selection of premium protection materials engineered for 
+      durability, performance, and modern design.
+    </p>
+  </div>
+</section>
 
-    <!-- PRODUCT 1 – Floor Protection Roll -->
-    <article class="product">
-      <div class="product__media">
-        <img src="easyapplication.jpg" alt="Temporary Floor Protection Roll" />
+<!-- PRODUCT SECTION 1 -->
+<section class="showcase">
+  <div class="container animate">
+
+    <div class="editorial-product">
+      <img src="easyapplication.jpg" alt="Floor Protection Roll">
+      <div class="editorial-text">
+        <h3>Temporary Floor Protection 36'' × 100'</h3>
+        <p>
+          Designed for professionals seeking reliable, re-usable protection. 
+          Anti-slip, heavy-duty, and engineered for clean application.
+        </p>
+        <a href="https://www.amazon.co.uk/Temporary-Floor-Protection-100-Heavy-Duty/dp/B07PG34ZBJ"
+           target="_blank" class="btn btn-primary">View on Amazon</a>
       </div>
+    </div>
 
-      <div class="product__body">
-        <h3>Temporary Floor Protection 36’’ × 100’</h3>
-        <p class="meta">Anti-slip • Reusable • No tape needed • Heavy duty</p>
-        <div class="price"><span>£...</span></div>
+    <div class="editorial-product reverse">
+      <img src="81Qr2PwCPbL._AC_SL1500_.jpg" alt="Microfiber Cloths">
+      <div class="editorial-text">
+        <h3>Microfiber Cleaning Cloths — 12 Pack</h3>
+        <p>
+          Ultra-absorbent, lint-free cleaning cloths designed for kitchens, cars,
+          glass, electronics, and every surface that requires precision.
+        </p>
+        <a href="https://www.amazon.co.uk/dp/B09X5HWQ48"
+           target="_blank" class="btn btn-primary">View on Amazon</a>
       </div>
+    </div>
 
-      <div class="product__actions">
-        <a
-          class="btn"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.amazon.co.uk/Temporary-Floor-Protection-100-Heavy-Duty/dp/B07PG34ZBJ"
-        >
-          View Product
-        </a>
-      </div>
-    </article>
+  </div>
+</section>
 
-    <!-- PRODUCT 2 – Microfiber Cloth Set -->
-    <article class="product">
-      <div class="product__media">
-        <img src="81Qr2PwCPbL._AC_SL1500_.jpg" alt="Microfiber Cleaning Cloths 12-Pack" />
-      </div>
-
-      <div class="product__body">
-        <h3>Microfiber Cleaning Cloths — 12 Pack (16'' × 16'')</h3>
-        <p class="meta">Ultra absorbent • Lint-free • Scratch-free • Multi-purpose</p>
-        <div class="price"><span>£.../span></div>
-      </div>
-
-      <div class="product__actions">
-        <a
-          class="btn"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.amazon.co.uk/dp/B09X5HWQ48"
-        >
-          View Product
-        </a>
-      </div>
-    </article>
-
-  </section>
+<!-- IMAGE STRIP -->
+<section class="image-strip">
+  <div class="container strip-grid animate">
+    <img src="paintproof.jpg" alt="">
+    <img src="savemoney.jpg" alt="">
+    <img src="absorbent.jpg" alt="">
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="container footer__grid">
+  <div class="container footer-grid">
 
-    <div class="about">
-      <h4>About</h4>
-      <p>Koruser provides premium temporary floor protection trusted by contractors and DIYers.</p>
+    <div>
+      <h4>Koruser</h4>
+      <p>Premium protection solutions for professionals and modern interiors.</p>
     </div>
 
-    <div class="contact">
+    <div>
       <h4>Contact</h4>
-      <p>uk@koruser.com/p>
-      <p>+44 7391 876402</p>
+      <p>dsinttr@gmail.com</p>
       <p>London, UK</p>
     </div>
 
-    <div class="payments">
-      <h4>Payments</h4>
-      <p>Visa • MasterCard • PayPal • Apple Pay • Google Pay</p>
+    <div>
+      <h4>Links</h4>
+      <a href="products.html">Products</a><br>
+      <a href="about.html">About</a><br>
+      <a href="contact.html">Contact</a><br><br>
+      <a href="https://www.linkedin.com/company/koruseruk/?viewAsMember=true" 
+         class="linkedin" target="_blank">LinkedIn</a>
     </div>
 
-    <div class="legal">© 2025, Koruser</div>
   </div>
+
+  <p class="footer-bottom">© 2025 Koruser</p>
 </footer>
+
+<!-- SECRET THEME HOTSPOT -->
+<div id="themeHotspot"></div>
 
 <script src="script.js"></script>
 
