@@ -1,222 +1,173 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Koruser® — Temporary Floor Protection</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Koruser — Premium Surface Protection</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header__bar">
-      <a class="brand" href="index.html">
-        <img src="logo.avif" alt="Koruser" />
-      </a>
+<!-- HEADER -->
+<header id="header" class="header">
+  <div class="container header-inner">
 
-      <button class="nav__btn" id="navBtn" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-      </button>
+    <a href="index.html" class="brand">
+      <img src="logo.avif" alt="Koruser">
+    </a>
 
-      <nav class="nav" id="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="cart.html">Cart</a></li>
-        </ul>
-      </nav>
-  </header>
+    <button id="menuBtn" class="menu-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
 
-  <section class="hero">
-    <div class="container">
-      <div class="slider" id="slider" aria-roledescription="carousel">
-        <div class="slides">
-          <article class="slide is-active" data-idx="0">
-            <img src="easyapplication.jpg" alt="Contractor using Koruser with a wheelbarrow on protected floors" />
-            <div class="slide__copy">
-              <h1>Temporary Floor Protection</h1>
-              <p>Easy to apply, anti-slip and liquid-proof. Perfect for stairs, corners and edges — no tape required.</p>
-              <div class="cta"><a class="btn" href="floor-protection.html">Shop Floor Rolls</a></div>
-            </div>
-          </article>
+    <nav id="nav" class="nav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-          <article class="slide" data-idx="1">
-            <img src="absorbent.jpg" alt="Lining countertops with absorbent Koruser sheet" />
-            <div class="slide__copy">
-              <h1>Absorbent & Reusable</h1>
-              <p>Top film is paint & liquid proof; underside grips the surface. Wipe, roll, reuse.</p>
-              <div class="cta"><a class="btn" href="#features">See Features</a></div>
-            </div>
-          </article>
+  </div>
+</header>
 
-          <article class="slide" data-idx="2">
-            <img src="paintproof.jpg" alt="Painter rolling walls while floor is protected with Koruser" />
-            <div class="slide__copy">
-              <h1>Paint-Proof Protection</h1>
-              <p>Keeps spills contained and floors safe from damage during renovations.</p>
-              <div class="cta"><a class="btn" href="floor-protection.html">Get Yours</a></div>
-            </div>
-          </article>
+<!-- FULLSCREEN MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu">
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
 
-          <article class="slide" data-idx="3">
-            <img src="savemoney.jpg" alt="Applying Koruser to hardwood floor to save time and money" />
-            <div class="slide__copy">
-              <h1>Save Time & Money</h1>
-              <p>Fast install and fewer cleanups on every job site.</p>
-              <div class="cta"><a class="btn" href="floor-protection.html">Buy Now</a></div>
-            </div>
-          </article>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-gradient"></div>
+  <div class="container hero-inner animate">
+    <h1 class="hero-title">Protection,<br><span>Reimagined.</span></h1>
+    <p class="hero-subtitle">
+      Engineered by professionals. Refined for modern living.  
+      Surface protection fit to the highhest of standards.
+    </p>
 
-        <button class="slider__nav prev" id="prev" aria-label="Previous slide">‹</button>
-        <button class="slider__nav next" id="next" aria-label="Next slide">›</button>
-        <div class="dots" id="dots" aria-label="Slide pagination"></div>
-      </div>
+    <div class="hero-actions">
+      <a href="products.html" class="btn btn-primary">Explore Products</a>
+      <a href="#video" class="btn btn-ghost">Watch Demo</a>
     </div>
-  </section>
-
-  <!-- Feature Blocks -->
-  <section id="features" class="container features">
-    <article class="feature">
-      <img src="easyapplication.jpg" alt="Easy application over floors" />
-      <div>
-        <h3>EASY APPLICATION</h3>
-        <p>Applies quickly on stairs, corners, baseboards and other tricky surfaces — <strong>no tape required</strong>.</p>
-      </div>
-    </article>
-
-    <article class="feature">
-      <img src="absorbent.jpg" alt="Absorbent Koruser on surfaces" />
-      <div>
-        <h3>ABSORBENT</h3>
-        <p>Top film is paint & liquid proof. Spills stay on the surface so you can wipe and reuse.</p>
-      </div>
-    </article>
-
-    <article class="feature">
-      <img src="paintproof.jpg" alt="Paint proof floor protection" />
-      <div>
-        <h3>PAINT-PROOF</h3>
-        <p>Protects floors from paint and liquid damage during renovations and DIY projects.</p>
-      </div>
-    </article>
-
-    <article class="feature">
-      <img src="savemoney.jpg" alt="Save time and money with Koruser" />
-      <div>
-        <h3>SAVE MONEY</h3>
-        <p>Reusable protection means fewer rolls and faster clean-ups across job sites.</p>
-      </div>
-    </article>
-  </section>
-
-  <!-- YouTube (safe card that opens in new tab to avoid embed restrictions) -->
-  <section class="container yt">
-    <h3>Koruser Floor Protection — In Action</h3>
-    <div class="yt__wrap" role="img" aria-label="Koruser video">
-      <img class="yt__thumb" src="paintproof.jpg" alt="Video thumbnail" />
-      <div class="yt__overlay">
-        <button id="ytOpen" class="play-btn" type="button" aria-label="Play on YouTube">▶</button>
-      </div>
-    </div>
-    <p style="color:var(--muted);font-size:14px">If embedding is blocked by YouTube, the video opens on youtube.com.</p>
-  </section>
-
-  <!-- Product -->
- <section id="shop" class="container products">
-
-  <!-- PRODUCT 1 – Floor Protection Roll -->
-  <article class="product">
-    <div class="product__media">
-      <img src="easyapplication.jpg" alt="Koruser Temporary Floor Protection Roll 36x100" />
-      <span class="product__badge">Best Seller</span>
-    </div>
-
-    <div class="product__body">
-      <h3>Temporary Floor Protection 36’’ × 100’</h3>
-      <p class="meta">Anti-slip • Reusable • No tape needed</p>
-      <div class="price"><span>£...</span></div>
-    </div>
-
-    <div class="product__actions">
-      <a
-        class="btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.amazon.co.uk/Temporary-Floor-Protection-100-Heavy-Duty/dp/B07PG34ZBJ"
-      >
-        View Product
-      </a>
-      <a class="btn btn--ghost" href="products.html">View Details</a>
-    </div>
-  </article>
-
-  <!-- PRODUCT 2 – Microfiber Cloth Set -->
-  <article class="product">
-    <div class="product__media">
-      <img src="81Qr2PwCPbL._AC_SL1500_.jpg" alt="Microfiber Cleaning Cloths 12-Pack" />
-      <span class="product__badge">New</span>
-    </div>
-
-    <div class="product__body">
-      <h3>Microfiber Cleaning Cloths — 12 Pack (16'' × 16'')</h3>
-      <p class="meta">Ultra absorbent • Lint-free • Multi-purpose</p>
-      <div class="price"><span>£...</span></div>
-    </div>
-
-    <div class="product__actions">
-      <a
-        class="btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.amazon.co.uk/dp/B09X5HWQ48"
-      >
-        View Product
-      </a>
-      <a class="btn btn--ghost" href="products.html">View Details</a>
-    </div>
-  </article>
-
+  </div>
 </section>
 
+<!-- EDITORIAL PANEL -->
+<section class="editorial">
+  <div class="container editorial-inner animate">
+    <h2 class="editorial-title">Designed with intention.</h2>
+    <p class="editorial-body">
+      Our materials are engineered with architectural precision — durable,
+      minimal, reliable — bringing professional-grade protection into elegant
+      environments without compromise.
+    </p>
+  </div>
+</section>
 
-  <!-- Subscribe -->
-  <section class="container subscribe">
-    <h3>Subscribe to updates</h3>
-    <form onsubmit="event.preventDefault(); alert('Thanks! You are subscribed.');">
-      <input type="email" placeholder="Email address" required />
-      <button class="btn" type="submit">Subscribe</button>
-    </form>
-  </section>
+<!-- IMAGE STRIP -->
+<section class="image-strip">
+  <div class="container strip-grid animate">
+    <img src="paintproof.jpg" alt="">
+    <img src="savemoney.jpg" alt="">
+    <img src="absorbent.jpg" alt="">
+  </div>
+</section>
 
+<!-- PRODUCT SHOWCASE (editorial style) -->
+<section class="showcase">
+  <div class="container animate">
+    <h2 class="section-heading">Our Essentials</h2>
 
-  <footer>
-    <div class="container footer__grid">
-      <div class="about">
-        <h4>About</h4>
-        <p>Koruser provides premium temporary floor protection trusted by contractors and DIYers.</p>
+    <div class="editorial-product">
+      <img src="easyapplication.jpg" alt="">
+      <div class="editorial-text">
+        <h3>Temporary Floor Protection Roll</h3>
+        <p>Reusable, anti-slip, heavy-duty surface protection trusted by contractors.</p>
+        <a href="https://www.amazon.co.uk/Temporary-Floor-Protection-100-Heavy-Duty/dp/B07PG34ZBJ"
+           class="btn btn-primary" target="_blank">View Product</a>
       </div>
-      <div class="contact">
-        <h4>Contact</h4>
-        <p>uk@koruser.com</p>
-        <p>+44 7391 876402</p>
-        <p>London, UK</p>
-      </div>
-      <div class="payments">
-        <h4>Payments</h4>
-        <p>Visa • MasterCard • Apple Pay • Google Pay</p>
-      </div>
-      <div class="legal">© 2025, Koruser</div>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <div class="editorial-product reverse">
+      <img src="81Qr2PwCPbL._AC_SL1500_.jpg" alt="">
+      <div class="editorial-text">
+        <h3>Microfiber Cleaning Cloths (12-Pack)</h3>
+        <p>Ultra-absorbent, lint-free cleaning cloths for every surface.</p>
+        <a href="https://www.amazon.co.uk/dp/B09X5HWQ48"
+           class="btn btn-primary" target="_blank">View Product</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video" class="video">
+  <div class="container animate">
+    <div class="video-frame">
+      <img src="paintproof.jpg">
+      <button id="playVideo" class="video-play">▶</button>
+    </div>
+    <p class="video-caption">See Koruser in action.</p>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section class="subscribe">
+  <div class="container subscribe-inner animate">
+    <h2>Stay Updated</h2>
+    <p>Be the first to hear about new releases.</p>
+
+    <form class="subscribe-form">
+      <input type="email" required placeholder="Email">
+      <button class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <h4>Koruser</h4>
+      <p>Premium protection solutions for professionals and modern interiors.</p>
+    </div>
+
+     <div>
+      <h4>Contact</h4>
+      <p>uk@koruser.com</p>
+      <p>+44 7391 876402</p>
+      <p>London, UK</p>
+    </div>
+
+    <div>
+      <h4>Links</h4>
+      <a href="products.html">Products</a><br>
+      <a href="about.html">About</a><br>
+      <a href="contact.html">Contact</a><br><br>
+      <a href="https://www.linkedin.com/company/koruseruk/?viewAsMember=true"
+         target="_blank" class="linkedin">LinkedIn</a>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">© 2025 Koruser</p>
+</footer>
+
+<!-- SECRET THEME TOGGLE -->
+<div id="themeHotspot"></div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
