@@ -1,100 +1,156 @@
+/* ============================================================
+   FULLSCREEN MOBILE MENU
+   ============================================================ */
 
-// Mobile menu toggle
-const navBtn = document.getElementById('navBtn');
-const nav = document.getElementById('nav');
-if (navBtn && nav) {
-  navBtn.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    navBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+  });
+
+  // Close menu when clicking a link
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => mobileMenu.classList.remove("open"));
   });
 }
 
-// Slider
-const slider = document.getElementById('slider');
-if (slider) {
-  const slides = Array.from(slider.querySelectorAll('.slide'));
-  const prev = document.getElementById('prev');
-  const next = document.getElementById('next');
-  const dotsWrap = document.getElementById('dots');
 
-  let idx = 0;
-  let timer;
 
-  function go(i) {
-    idx = (i + slides.length) % slides.length;
-    slides.forEach(s => s.classList.remove('is-active'));
-    slides[idx].classList.add('is-active');
-    if (dotsWrap) {
-      dotsWrap.querySelectorAll('.dot').forEach((d, j) => {
-        d.classList.toggle('active', j === idx);
-        d.setAttribute('aria-current', j === idx ? 'true' : 'false');
-      });
+/* ============================================================
+   SCROLL REVEAL EFFECT
+   ============================================================ */
+
+const animated = document.querySelectorAll(".animate");
+
+function revealOnScroll() {
+  animated.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.85) {
+      el.classList.add("show");
     }
-  }
-
-  function nextSlide() { go(idx + 1); }
-  function prevSlide() { go(idx - 1); }
-
-  function startAuto() { stopAuto(); timer = setInterval(nextSlide, 5000); }
-  function stopAuto() { if (timer) clearInterval(timer); }
-
-  // Dots
-  if (dotsWrap) {
-    slides.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.className = 'dot';
-      b.type = 'button';
-      b.addEventListener('click', () => { go(i); startAuto(); });
-      dotsWrap.appendChild(b);
-    });
-  }
-
-  if (prev && next) {
-    prev.addEventListener('click', () => { prevSlide(); startAuto(); });
-    next.addEventListener('click', () => { nextSlide(); startAuto(); });
-  }
-
-  // Init
-  go(0); startAuto();
-
-  // Pause on hover/focus
-  slider.addEventListener('mouseenter', stopAuto);
-  slider.addEventListener('mouseleave', startAuto);
-  slider.addEventListener('focusin', stopAuto);
-  slider.addEventListener('focusout', startAuto);
-}
-
-// YouTube card: open video in a new tab to avoid embed restrictions
-const yt = document.getElementById('ytOpen');
-if (yt) {
-  yt.addEventListener('click', () => {
-    window.open('https://www.youtube.com/watch?v=hv90QD-e_zw', '_blank', 'noopener,noreferrer');
   });
 }
-// ---- Contact form -> Gmail compose (no backend) ----
-(() => {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
 
-  const TO = 'uk@koruser.com'; // your receiving Gmail address
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 
-  form.addEventListener('submit', (e) => {
+
+
+/* ============================================================
+   PARALLAX HERO (subtle, premium)
+   ============================================================ */
+
+let lastScroll = 0;
+
+function parallaxLoop() {
+  const scrollY = window.scrollY;
+
+  const hero = document.querySelector(".hero");
+  if (hero) {
+    hero.style.transform = `translateY(${scrollY * 0.08}px)`;
+  }
+
+  requestAnimationFrame(parallaxLoop);
+}
+
+requestAnimationFrame(parallaxLoop);
+
+
+
+/* ============================================================
+   YOUTUBE DEMO BUTTON
+   ============================================================ */
+
+const playVideo = document.getElementById("playVideo");
+
+if (playVideo) {
+  playVideo.addEventListener("click", () => {
+    window.open("https://www.youtube.com/watch?v=hv90QD-e_zw", "_blank");
+  });
+}
+
+
+
+/* ============================================================
+   SECRET THEME TOGGLER (TRIPLE TAP BOTTOM-LEFT)
+   ============================================================ */
+
+let tapCount = 0;
+let tapTimeout;
+
+const hotspot = document.getElementById("themeHotspot");
+if (hotspot) {
+  hotspot.addEventListener("click", () => {
+    tapCount++;
+
+    clearTimeout(tapTimeout);
+    tapTimeout = setTimeout(() => tapCount = 0, 350);
+
+    if (tapCount >= 3) {
+      toggleTheme();
+      tapCount = 0;
+    }
+  });
+}
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute("data-theme");
+
+  if (current === "light") {
+    html.setAttribute("data-theme", "dark");
+    localStorage.setItem("koruser-theme", "dark");
+  } else {
+    html.setAttribute("data-theme", "light");
+    localStorage.setItem("koruser-theme", "light");
+  }
+}
+
+
+
+/* ============================================================
+   LOAD SAVED THEME PREFERENCE
+   ============================================================ */
+
+(function loadTheme() {
+  const saved = localStorage.getItem("koruser-theme");
+  if (saved) {
+    document.documentElement.setAttribute("data-theme", saved);
+  }
+})();
+/* ============================================================
+   CONTACT FORM -> EMAIL COMPOSE (uk@koruser.com)
+   ============================================================ */
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  const TO = "uk@koruser.com";
+
+  contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('c-name')?.value?.trim() || '';
-    const email = document.getElementById('c-email')?.value?.trim() || '';
-    const subj = document.getElementById('c-subj')?.value?.trim() || 'Website contact';
-    const msg  = document.getElementById('c-msg')?.value?.trim()  || '';
+    const name  = document.getElementById("c-name")?.value?.trim()  || "";
+    const email = document.getElementById("c-email")?.value?.trim() || "";
+    const subj  = document.getElementById("c-subj")?.value?.trim()  || "Koruser website contact";
+    const msg   = document.getElementById("c-msg")?.value?.trim()   || "";
 
     const body = `From: ${name} <${email}>\n\n${msg}`;
 
+    // Gmail compose URL
     const gmailURL =
       `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(TO)}&su=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
 
+    // Fallback mailto URL
     const mailtoURL =
       `mailto:${encodeURIComponent(TO)}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
 
-    const opened = window.open(gmailURL, '_blank', 'noopener,noreferrer');
-    if (!opened) window.location.href = mailtoURL;
+    // Try opening Gmail in a new tab; fallback to mailto if blocked
+    const opened = window.open(gmailURL, "_blank", "noopener,noreferrer");
+    if (!opened) {
+      window.location.href = mailtoURL;
+    }
   });
-})();
+}
