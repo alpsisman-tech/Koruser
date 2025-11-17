@@ -1,75 +1,150 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Contact — Koruser</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
 
+<!-- HEADER -->
+<header id="header" class="header">
+  <div class="container header-inner">
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header__bar">
-      <a class="brand" href="index.html">
-        <img src="logo.avif" alt="Koruser" />
-      </a>
+    <a href="index.html" class="brand">
+      <img src="logo.avif" alt="Koruser">
+    </a>
 
-      <button class="nav__btn" id="navBtn" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-      </button>
+    <button id="menuBtn" class="menu-btn">
+      <span></span><span></span><span></span>
+    </button>
 
-      <nav class="nav" id="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="cart.html">Cart</a></li>
-        </ul>
-      </nav>
+    <nav id="nav" class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- FULLSCREEN MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a class="active" href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-gradient"></div>
+
+  <div class="container hero-inner animate">
+    <h1 class="hero-title">Get in Touch</h1>
+    <p class="hero-subtitle">
+      We're here to help. Whether you have a question about products, 
+      wholesale, or support—our team is ready.
+    </p>
+  </div>
+</section>
+
+
+
+<!-- CONTACT FORM -->
+<section class="editorial">
+  <div class="container editorial-inner animate">
+
+    <h2 class="editorial-title">Write to us.</h2>
+    <p class="editorial-body">
+      Fill in your details below and we’ll get back to you shortly.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="contact-form-section">
+  <div class="container animate">
+
+    <form id="contactForm" class="contact-form">
+
+      <div class="form-group">
+        <label for="c-name">Full Name</label>
+        <input id="c-name" type="text" required placeholder="Your name">
+      </div>
+
+      <div class="form-group">
+        <label for="c-email">Email Address</label>
+        <input id="c-email" type="email" required placeholder="name@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="c-subj">Subject</label>
+        <input id="c-subj" type="text" required placeholder="How can we help?">
+      </div>
+
+      <div class="form-group">
+        <label for="c-msg">Message</label>
+        <textarea id="c-msg" rows="6" required placeholder="Write your message here"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+
+    </form>
+
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <h4>Koruser</h4>
+      <p>Premium protection solutions for professionals and modern interiors.</p>
     </div>
-  </header>
 
-<main class="container">
-  <section class="subscribe">
-    <h3>Contact Us</h3>
-    <p>Email: uk@koruser.com</p>
-    <p>Phone: +44 7391 876402</p>
-    <p>Address: London, UK</p>
-    <form id="contactForm">
-  <input id="c-name"   type="text"  placeholder="Name"   required />
-  <input id="c-email"  type="email" placeholder="Email"  required />
-  <input id="c-subj"   type="text"  placeholder="Subject" required />
-  <textarea id="c-msg" placeholder="Message" rows="5" required></textarea>
-  <button class="btn" type="submit">Send</button>
-</form>
-  </section>
-</main>
-
-  <footer>
-    <div class="container footer__grid">
-      <div class="about">
-        <h4>About</h4>
-        <p>Koruser provides premium temporary floor protection trusted by contractors and DIYers.</p>
-      </div>
-      <div class="contact">
-        <h4>Contact</h4>
-        <p>uk@koruser.com</p>
-        <p>+44 7391 876402</p>
-        <p>London, UK</p>
-      </div>
-      <div class="payments">
-        <h4>Payments</h4>
-        <p>Visa • MasterCard • Apple Pay • Google Pay</p>
-      </div>
-      <div class="legal">© 2025, Koruser</div>
+     <div>
+      <h4>Contact</h4>
+      <p>uk@koruser.com</p>
+      <p>+44 7391 876402</p>
+      <p>London, UK</p>
     </div>
-  </footer>
+
+    <div>
+      <h4>Links</h4>
+      <a href="products.html">Products</a><br>
+      <a href="about.html">About</a><br>
+      <a href="contact.html">Contact</a><br><br>
+      <a href="https://www.linkedin.com/company/koruseruk/?viewAsMember=true"
+         class="linkedin" target="_blank">LinkedIn</a>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">© 2025 Koruser</p>
+</footer>
+
+
+<!-- SECRET THEME HOTSPOT -->
+<div id="themeHotspot"></div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
