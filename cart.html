@@ -1,67 +1,160 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Cart — Koruser</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
 
+<!-- HEADER -->
+<header id="header" class="header">
+  <div class="container header-inner">
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header__bar">
-      <a class="brand" href="index.html">
-        <img src="logo.avif" alt="Koruser" />
+    <a href="index.html" class="brand">
+      <img src="logo.avif" alt="Koruser">
+    </a>
+
+    <button id="menuBtn" class="menu-btn">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="nav" class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- FULLSCREEN MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-gradient"></div>
+
+  <div class="container hero-inner animate">
+    <h1 class="hero-title">Your Cart</h1>
+    <p class="hero-subtitle">
+      Koruser products are fulfilled securely through Amazon.  
+      Review your selection and continue to checkout.
+    </p>
+  </div>
+</section>
+
+
+
+<!-- CART CONTENT -->
+<section class="editorial">
+  <div class="container editorial-inner animate">
+
+    <h2 class="editorial-title">Where you left off.</h2>
+    <p class="editorial-body">
+      Your purchase is completed via Amazon for fast shipping, secure payment, 
+      and trusted delivery. Select the product below to continue.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="cart-section">
+  <div class="container animate">
+
+    <!-- Product 1 -->
+    <div class="cart-item">
+      <div class="cart-info">
+        <h3>Temporary Floor Protection 36'' × 100'</h3>
+        <p class="cart-desc">
+          Heavy-duty, anti-slip reusable floor protection roll.
+        </p>
+      </div>
+
+      <a href="https://www.amazon.co.uk/Temporary-Floor-Protection-100-Heavy-Duty/dp/B07PG34ZBJ" 
+         class="btn btn-primary" target="_blank">
+        Continue on Amazon
       </a>
-
-      <button class="nav__btn" id="navBtn" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-      </button>
-
-      <nav class="nav" id="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="cart.html">Cart</a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
 
-<main class="container">
-  <section class="subscribe">
-    <h3>Your Cart</h3>
-    <p>Your cart is empty.</p>
-    <a class="btn" href="floor-protection.html">Shop Floor Protection</a>
-  </section>
-</main>
+    <!-- Product 2 -->
+    <div class="cart-item">
+      <div class="cart-info">
+        <h3>Microfiber Cleaning Cloths — 12 Pack</h3>
+        <p class="cart-desc">
+          Ultra-absorbent, lint-free microfiber cloths for every surface.
+        </p>
+      </div>
 
-  <footer>
-    <div class="container footer__grid">
-      <div class="about">
-        <h4>About</h4>
-        <p>Koruser provides premium temporary floor protection trusted by contractors and DIYers.</p>
-      </div>
-      <div class="contact">
-        <h4>Contact</h4>
-        <p>uk@koruser.com</p>
-        <p>+44 7391 876402</p>
-        <p>London, UK</p>
-      </div>
-      <div class="payments">
-        <h4>Payments</h4>
-        <p>Visa • MasterCard • Apple Pay • Google Pay</p>
-      </div>
-      <div class="legal">© 2025, Koruser</div>
+      <a href="https://www.amazon.co.uk/dp/B09X5HWQ48" 
+         class="btn btn-primary" target="_blank">
+        Continue on Amazon
+      </a>
     </div>
-  </footer>
+
+    <!-- Message -->
+    <p class="cart-note">
+      Items will be added directly to your Amazon basket once selected.  
+      You can continue browsing Koruser or complete your order securely.
+    </p>
+
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <h4>Koruser</h4>
+      <p>Premium protection solutions for professionals and modern interiors.</p>
+    </div>
+
+   <div>
+      <h4>Contact</h4>
+      <p>uk@koruser.com</p>
+      <p>+44 7391 876402</p>
+      <p>London, UK</p>
+    </div>
+    
+    <div>
+      <h4>Links</h4>
+      <a href="products.html">Products</a><br>
+      <a href="about.html">About</a><br>
+      <a href="contact.html">Contact</a><br><br>
+      <a href="https://www.linkedin.com/company/koruseruk/?viewAsMember=true"
+         class="linkedin" target="_blank">LinkedIn</a>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">© 2025 Koruser</p>
+</footer>
+
+
+<!-- SECRET THEME HOTSPOT -->
+<div id="themeHotspot"></div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
